@@ -19,6 +19,8 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    timeout-minutes: 60
+
     container:
       image: michielgerritsen/magento-project-community-edition:${{ matrix.PHP_VERSION }}-magento${{ matrix.MAGENTO_VERSION }}
       env:
