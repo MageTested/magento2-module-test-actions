@@ -1,0 +1,29 @@
+{
+    "name": "joseph-leedy/module-test-actions",
+    "description": "Simple Magento extension for testing GitHub Actions workflows",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joseph Leedy",
+            "email": "3091468+JosephLeedy@users.noreply.github.com"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "JosephLeedy\\TestActions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JosephLeedy\\TestActions\\Test": "test/"
+        }
+    },
+    "require": {
+    },
+    "require-dev": {
+    }
+}
