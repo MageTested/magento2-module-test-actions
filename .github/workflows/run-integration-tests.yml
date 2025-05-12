@@ -17,6 +17,8 @@ jobs:
             MAGENTO_VERSION: 2.4.8
             generate_coverage: true
 
+    name: Run integration tests for Magento ${{ matrix.MAGENTO_VERSION }} on ${{ matrix.PHP_VERSION }}
+
     runs-on: ubuntu-latest
 
     timeout-minutes: 60
