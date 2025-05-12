@@ -27,7 +27,7 @@ jobs:
       image: michielgerritsen/magento-project-community-edition:${{ matrix.PHP_VERSION }}-magento${{ matrix.MAGENTO_VERSION }}
       env:
         URL: "http://localhost/"
-        FLAT_TABLES: false
+        FLAT_TABLES: "false"
       ports:
         - 80
         - 3306
