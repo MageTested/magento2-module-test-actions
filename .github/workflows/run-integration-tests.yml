@@ -39,6 +39,9 @@ jobs:
       - name: Setup problem matchers for PHPUnit
         run: echo "::add-matcher::${{ github.workspace }}/.github/workflows/problem-matchers/phpunit.json"
 
+      - name: Start services
+        run: /bin/bash /data/start-services
+
       - name: Copy extension to Magento codebase
         run: mkdir /data/extensions/module-test-actions && cp -r . /data/extensions/module-test-actions
 
