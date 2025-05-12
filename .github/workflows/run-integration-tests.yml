@@ -42,7 +42,7 @@ jobs:
         run: |
           curl -L https://php.github.io/pie/pie-nightly.phar -o /usr/local/bin/pie \
           && chmod +x /usr/local/bin/pie \
-          && pie install xdebug/xdebug
+          && php -dmemory_limit=-1 -f /usr/local/bin/pie -- install xdebug/xdebug
 
       - name: Copy extension to Magento codebase
         run: mkdir /data/extensions/module-test-actions && cp -r . /data/extensions/module-test-actions
