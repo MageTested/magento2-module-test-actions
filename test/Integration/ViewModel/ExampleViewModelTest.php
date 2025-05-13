@@ -27,4 +27,17 @@ final class ExampleViewModelTest extends TestCase
 
         self::assertSame($expectedStoreName, $actualStoreName);
     }
+
+    #[Config('general/store_information/phone', '1-800-555-1234')]
+    public function test_it_gets_the_configured_store_phone_number(): void
+    {
+        $objectManager = Bootstrap::getObjectManager();
+        /** @var ExampleViewModel $exampleViewModel */
+        $exampleViewModel = $objectManager->create(ExampleViewModel::class);
+
+        $expectedStorePhoneNumber = '1-800-555-1234';
+        $actualStorePhoneNumber = $exampleViewModel->getStorePhoneNumber();
+
+        self::assertSame($expectedStorePhoneNumber, $actualStorePhoneNumber);
+    }
 }
