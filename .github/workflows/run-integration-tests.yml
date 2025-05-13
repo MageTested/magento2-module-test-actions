@@ -5,6 +5,9 @@ on:
 
   workflow_dispatch:
 
+permissions:
+  issues: write
+
 jobs:
   run-integration-tests:
     strategy:
