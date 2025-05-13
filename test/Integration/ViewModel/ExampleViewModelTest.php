@@ -10,15 +10,13 @@ use Magento\Store\Model\ScopeInterface;
 use Magento\TestFramework\Fixture\AppArea;
 use Magento\TestFramework\Fixture\Config;
 use Magento\TestFramework\Helper\Bootstrap;
-use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 #[AppArea(Area::AREA_FRONTEND)]
 final class ExampleViewModelTest extends TestCase
 {
-    #[Test]
     #[Config('general/store_information/name', 'Test Store', ScopeInterface::SCOPE_STORE, 'default')]
-    public function it_gets_the_configured_store_name(): void
+    public function test_it_gets_the_configured_store_name(): void
     {
         $objectManager = Bootstrap::getObjectManager();
         /** @var ExampleViewModel $exampleViewModel */
