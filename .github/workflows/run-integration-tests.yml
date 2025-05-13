@@ -71,7 +71,6 @@ jobs:
           XDEBUG_MODE: coverage
         working-directory: /data
         run: |
-          echo "zend_extension=xdebug" >> /usr/local/etc/php/conf.d/00-xdebug.ini
           php vendor/bin/phpunit -c /data/dev/tests/integration/phpunit.xml --coverage-text=/data/coverage.txt --coverage-clover=/data/coverage.xml --coverage-filter=/data/vendor/joseph-leedy/module-test-actions/src /data/vendor/joseph-leedy/module-test-actions/test/Integration \
           && {
             echo 'phpunit_coverage<<EOF'
