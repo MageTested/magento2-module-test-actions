@@ -15,7 +15,7 @@ use PHPUnit\Framework\TestCase;
 #[AppArea(Area::AREA_FRONTEND)]
 final class ExampleViewModelTest extends TestCase
 {
-    #[Config('general/store_information/name', 'Test Store', ScopeInterface::SCOPE_STORE, 'default')]
+    #[Config('general/store_information/name', 'Test Store')]
     public function test_it_gets_the_configured_store_name(): void
     {
         $objectManager = Bootstrap::getObjectManager();
