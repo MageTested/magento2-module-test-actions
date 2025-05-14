@@ -17,7 +17,7 @@ jobs:
         with:
           script: |
             const tag = `${{ github.ref_name }}`
-            const isPrerelease = tag.includes('alpha') || tag.includes('beta')
+            const isPrerelease = /(alpha|beta|rc)/.test(tag)
             github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
