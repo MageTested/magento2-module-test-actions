@@ -41,7 +41,7 @@ jobs:
 
       - name: Install Xdebug
         if: matrix.generate_coverage
-        run: dpkg -s php8.4-xdebug &>/dev/null || apt install -y php8.4-xdebug
+        run: dpkg -s php8.4-xdebug >/dev/null 2>&1 || apt install -y php8.4-xdebug
 
       - name: Copy extension to Magento codebase
         run: mkdir /data/extensions/module-test-actions && cp -r . /data/extensions/module-test-actions
