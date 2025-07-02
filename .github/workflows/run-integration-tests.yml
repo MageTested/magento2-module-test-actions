@@ -40,10 +40,10 @@ jobs:
         run: echo "::add-matcher::${{ github.workspace }}/.github/workflows/problem-matchers/phpunit.json"
 
       - name: Start services
-        run: /bin/bash /data/entrypoint.sh
+        run: /bin/bash /data/start-services
 
-      - name: Show Elasticsearch log file
-        run: cat /var/log/elasticsearch/elasticsearch.log || echo "Log file not found"
+      - name: Show supervisord log file
+        run: cat /var/log/supervisord.log || echo "Log file not found"
 
       - name: Install Xdebug
         if: matrix.generate_coverage
