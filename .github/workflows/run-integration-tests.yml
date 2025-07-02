@@ -32,6 +32,8 @@ jobs:
       image: michielgerritsen/magento-project-community-edition:${{ matrix.PHP_FPM_VERSION }}-magento${{ matrix.MAGENTO_VERSION }}
 
     steps:
+      - run: ps aux
+
       - name: Check out repository
         uses: actions/checkout@v4
 
