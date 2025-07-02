@@ -14,10 +14,10 @@ jobs:
     strategy:
       matrix:
         include:
-          - PHP_FPM_VERSION: php81-fpm
-            PHP_VERSION: 8.1
-            MAGENTO_VERSION: 2.4.5-p13
-            generate_coverage: false
+#          - PHP_FPM_VERSION: php81-fpm
+#            PHP_VERSION: 8.1
+#            MAGENTO_VERSION: 2.4.5-p13
+#            generate_coverage: false
           - PHP_FPM_VERSION: php84-fpm
             PHP_VERSION: 8.4
             MAGENTO_VERSION: 2.4.8-p1
@@ -33,8 +33,6 @@ jobs:
       image: michielgerritsen/magento-project-community-edition:${{ matrix.PHP_FPM_VERSION }}-magento${{ matrix.MAGENTO_VERSION }}
 
     steps:
-      - run: ps aux
-
       - name: Check out repository
         uses: actions/checkout@v4
 
@@ -42,7 +40,7 @@ jobs:
         run: echo "::add-matcher::${{ github.workspace }}/.github/workflows/problem-matchers/phpunit.json"
 
       - name: Start services
-        run: /bin/bash /data/start-services
+        run: /bin/bash /data/entrypoint.sh
 
       - name: Show Elasticsearch log file
         run: cat /var/log/elasticsearch/elasticsearch.log || echo "Log file not found"
