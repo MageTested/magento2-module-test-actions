@@ -41,6 +41,9 @@ jobs:
       - name: Start services
         run: /bin/bash /data/start-services
 
+      - name: Show Elasticsearch log file
+        run: cat /var/log/elasticsearch/elasticsearch.log || echo "Log file not found"
+
       - name: Install Xdebug
         if: matrix.generate_coverage
         run: dpkg -s php${{ matrix.PHP_VERSION }}-xdebug >/dev/null 2>&1 || apt install -y php${{ matrix.PHP_VERSION }}-xdebug
